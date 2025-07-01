@@ -2,16 +2,10 @@
 
 #include <string>
 #include <sstream>
-#ifdef _WIN32
-#include <windows.h>
-#endif
 
 namespace hexter {
   const std::string off = "\033[m";
   inline std::string color(const std::string& hex_color, bool bold = true) {
-#ifdef _WIN32
-  SetConsoleOutputCP(CP_UTF8);
-#endif
     if (hex_color.size() != 7 || hex_color[0] != '#') return "";
 
     int r, g, b;
