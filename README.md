@@ -74,5 +74,3 @@ sudo wget -q \
 
 > **`hexter`** is still in early versions, if you find any *bugs*, please open an [issue](https://github.com/terroo/hexter/issues).
 
-### Pull requests? 
-✅ `hexter` needs Windows compatibility, feel free to submit your PR =).
