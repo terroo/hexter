@@ -12,6 +12,29 @@
 ---
 
 ## 🚧 Build and Install
+### Windows
+Install Dependencies:
++ [Git](https://winstall.app/apps/Git.Git): `winget install --id=Git.Git  -e`
++ [GCC](https://terminalroot.com/how-to-install-the-new-version-of-gcc-mingw-on-windows/) → *Click on the link to see the procedure*
++ [CMake](https://winstall.app/apps/Kitware.CMake): `winget install --id=Kitware.CMake  -e` 
+
+Open [PowerShell](https://terminalroot.com/customize-your-powershell-like-a-pro/) with **administrator permission**: 
+> `Start-Process powershell -Verb runAs`
+
+```bash
+git clone https://github.com/terroo/hexter
+cd hexter
+cmake . -G "Unix Makefiles" -B build -DCMAKE_INSTALL_PREFIX="C:/Program Files/HexTer"
+cmake --build build
+cmake --install build
+[System.Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\HexTer\bin", [System.EnvironmentVariableTarget]::Machine)
+```
+> Close the terminal and open it again and test: `hexter fd6389`
+
+![hexter on Windows](hexter-windows.jpg) 
+
+
+### Unix-like(macOS, GNU/Linux, BSD and Haiku)
 ```bash
 git clone https://github.com/terroo/hexter
 cd hexter
